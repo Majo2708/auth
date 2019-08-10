@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT; //Si encuentras una variable de entorno PORT tomala o si no el 3000
 const verify = require('./middlewares/verifyToken');
+const cors = require('cors');
+
+app.use(cors());
 
 //Para conectarse a la base de datos de Mongoose
 mongoose.connect(process.env.mongoUrl, {useNewUrlParser: true}, (err)=>{
